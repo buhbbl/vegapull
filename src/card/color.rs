@@ -16,7 +16,7 @@ pub enum CardColor {
 impl CardColor {
     pub fn parse(localizer: &Localizer, value: &str) -> Result<CardColor> {
         match localizer.match_color(value.trim()) {
-            Some(key) => Ok(Self::from_str(&key)?),
+            Some(key) => Self::from_str(&key),
             None => bail!("Failed to match color `{}`", value),
         }
     }
