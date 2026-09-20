@@ -15,8 +15,7 @@ fn normalize_ascii(s: &str) -> String {
     s.nfkc().collect::<String>()
 }
 
-static FIRST_H3: Lazy<Regex> =
-    Lazy::new(|| Regex::new(r"(?is)<h3\b[^>]*>.*?</h3>\s*").unwrap());
+static FIRST_H3: Lazy<Regex> = Lazy::new(|| Regex::new(r"(?is)<h3\b[^>]*>.*?</h3>\s*").unwrap());
 static ATTRIBUTE_HTML_TAG: Lazy<Regex> =
     Lazy::new(|| Regex::new(r"(?i)</?\s*([a-z]+)\b[^>]*?/?>").unwrap());
 
